@@ -2,13 +2,13 @@ import streamlit as st
 import pandas as pd
 import joblib 
 
-# --- Memuat Model KNN ---
+# --- Memuat Model Personality ---
 try:
-    # Ganti 'knn_model.pkl' dengan nama file model KNN Anda
-    with open('knn_model.pkl', 'rb') as file:
+    # Ganti 'personality_model.pkl' dengan nama file model Personality Anda
+    with open('personality_model.pkl', 'rb') as file:
         knn = joblib.load(file)
 except FileNotFoundError:
-    st.error("File 'knn_model.pkl' tidak ditemukan. Pastikan model berada di direktori yang sama.")
+    st.error("File 'personality_model.pkl' tidak ditemukan. Pastikan model berada di direktori yang sama.")
     st.stop()
 except Exception as e:
     st.error(f"Terjadi kesalahan saat memuat model: {e}")
