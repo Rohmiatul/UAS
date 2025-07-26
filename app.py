@@ -25,7 +25,7 @@ def load_personality_model():
         return None
 
 # Muat model saat aplikasi dimulai
-knn_model = load_personality_model()
+personality_model = load_personality_model()
 
 # --- Judul dan Deskripsi Aplikasi ---
 st.title("Aplikasi Prediksi Kepribadian")
@@ -55,7 +55,7 @@ friends_circle_size = st.number_input(
 # --- Tombol Prediksi ---
 st.markdown("---")
 if st.button("Prediksi Kepribadian"):
-    if knn_model is not None:
+    if personality_model is not None:
         # Buat DataFrame dari input pengguna
         new_data = pd.DataFrame(
             [[social_event_attendance, going_outside, friends_circle_size]],
